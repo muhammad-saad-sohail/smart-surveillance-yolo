@@ -313,7 +313,7 @@ MIT License - see LICENSE file for details.
 **Muhammad Saad Sohail**
 
 - Email: rajasaadsohail646@gmail.com
-- LinkedIn: [linkedin.com/in/saadsohail](https://linkedin.com/in/saadsohail)
+- LinkedIn: [linkedin.com/in/msaad-sohail](https://linkedin.com/in/msaad-sohail)
 - GitHub: [@muhammad-saad-sohail](https://github.com/muhammad-saad-sohail)
 
 ---
