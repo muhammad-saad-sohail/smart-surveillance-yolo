@@ -1,0 +1,42 @@
+# Core Computer Vision
+opencv-python==4.8.0.76
+ultralytics==8.0.200
+
+# Deep Learning
+torch==2.0.1
+torchvision==0.15.2
+
+# Image Processing
+numpy==1.24.3
+pillow==10.0.0
+
+# Video Processing
+imutils==0.5.4
+
+# Object Tracking
+filterpy==1.4.5
+scikit-image==0.21.0
+
+# Web Framework
+flask==2.3.3
+flask-cors==4.0.0
+
+# Configuration
+pyyaml==6.0.1
+python-dotenv==1.0.0
+
+# Notifications
+requests==2.31.0
+
+# Database
+sqlite3
+
+# Utilities
+tqdm==4.66.1
+python-dateutil==2.8.2
+
+# Visualization
+matplotlib==3.7.2
+
+# Production
+gunicorn==21.2.0

@@ -1,0 +1,88 @@
+# Smart Surveillance System Configuration
+
+# Camera Settings
+camera:
+  source: 0  # 0 for webcam, or RTSP URL: "rtsp://192.168.1.100:554/stream"
+  fps: 15
+  resolution: [640, 480]  # [width, height]
+  rotation: 0  # Degrees: 0, 90, 180, 270
+
+# Detection Settings
+detection:
+  model: "yolov8n.pt"  # yolov8n.pt (fastest) or yolov8s.pt (more accurate)
+  confidence_threshold: 0.5  # Minimum confidence for detection (0.0-1.0)
+  nms_threshold: 0.4  # Non-maximum suppression threshold
+  classes: [0, 2, 5, 7]  # COCO classes: 0=person, 2=car, 5=bus, 7=truck
+  max_detections: 100  # Maximum detections per frame
+
+# Tracking Settings
+tracking:
+  enabled: true
+  max_age: 30  # Frames to keep track without detection
+  min_hits: 3  # Minimum detections before confirmed track
+  iou_threshold: 0.3  # Intersection over Union threshold
+
+# Detection Zones
+zones:
+  enabled: false
+  zones_file: "zones/entrance.json"
+
+# Alert System
+alerts:
+  enabled: true
+  
+  # Loitering detection
+  loitering:
+    enabled: true
+    time_threshold: 30  # Seconds
+  
+  # Intrusion detection
+  intrusion:
+    enabled: true
+    restricted_zones: []
+  
+  # Crowd detection
+  crowd:
+    enabled: true
+    person_threshold: 10
+  
+  # Notifications
+  webhook_url: ""  # HTTP endpoint for alerts
+  email:
+    enabled: false
+    smtp_server: "smtp.gmail.com"
+    smtp_port: 587
+    from_email: ""
+    to_emails: []
+    password: ""
+
+# Recording Settings
+recording:
+  enabled: false
+  output_dir: "recordings/"
+  format: "mp4"
+  fps: 15
+  save_events_only: true  # Only record when alerts triggered
+  retention_days: 7  # Auto-delete recordings older than this
+
+# Performance Settings
+performance:
+  resize_frame: false
+  resize_width: 416  # Smaller = faster
+  skip_frames: 0  # Process every Nth frame (0 = all frames)
+  use_gpu: false  # Enable if CUDA/TensorRT available
+
+# Display Settings
+display:
+  show_fps: true
+  show_detections: true
+  show_tracks: true
+  show_zones: true
+  window_name: "Smart Surveillance"
+
+# Logging
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  file: "logs/surveillance.log"
+  save_events: true
+  events_db: "logs/events.db"
